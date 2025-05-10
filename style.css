@@ -97,6 +97,7 @@ header {
     background: rgba(0, 0, 0, 0.6); /* Прозорий чорний фон */
     padding: 20px 0;
     border-bottom: 2px solid #ffcc00; /* Жовта лінія внизу */
+    width:100%;
 }
 
 header h1 {
