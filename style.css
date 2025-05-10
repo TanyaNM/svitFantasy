@@ -1,0 +1,178 @@
+/* Основні стилі для тіла сторінки */
+body { 
+    margin: 0; /* Відсутність зовнішніх відступів */
+    font-family: 'Georgia', serif; /* Шрифт тексту */
+    background: #0b0c1a; /* Темний фон (нічна тема) */
+    color: #f0e6d2; /* Світлий колір тексту */
+    overflow-x: hidden; /* Вимикає горизонтальну прокрутку */
+    position: relative; /* Для позиціонування елементів всередині */
+    display: flex; /* Центрування контенту по вертикалі та горизонталі */
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Анімовані шари зірок */
+.stars, .stars2, .stars3 {
+    position: fixed; /* Закріплені на екрані */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent; /* Прозорий фон */
+    pointer-events: none; /* Не заважає взаємодії з елементами */
+    z-index: 0; /* Найнижчий шар */
+}
+
+/* Туманний ефект */
+.fog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200%; /* Ширше екрана для ефекту руху */
+    height: 200%;
+    background: url('https://i.ibb.co/xm69zVZ/fog-texture.png') repeat; /* Текстура туману */
+    opacity: 0.03; /* Легка прозорість */
+    animation: fogMove 120s linear infinite; /* Безкінечна анімація */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Контейнер для магів, що літають */
+.flying-mages {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Стилі для окремого мага */
+.mage {
+    position: absolute;
+    background: url('https://learn.logikaschool.com/uploads/student/1418529/6815fb16d4177.png') no-repeat center center;
+    background-size: contain; /* Підганяє зображення під розмір */
+    width: 40px;
+    height: 40px;
+    animation: flyMage 10s linear infinite; /* Стандартна анімація */
+}
+
+/* Індивідуальні тривалості/затримки для кожного мага */
+#mage1 {
+    animation-duration: 12s;
+    animation-delay: 2s;
+}
+
+#mage2 {
+    animation-duration: 15s;
+    animation-delay: 5s;
+}
+
+#mage3 {
+    animation-duration: 18s;
+    animation-delay: 8s;
+}
+
+/* Ключові кадри для анімації польоту мага */
+@keyframes flyMage {
+    0%   { transform: translateX(0) translateY(0); }
+    25%  { transform: translateX(50vw) translateY(10vh); }
+    50%  { transform: translateX(100vw) translateY(0); }
+    75%  { transform: translateX(50vw) translateY(-10vh); }
+    100% { transform: translateX(0) translateY(0); }
+}
+
+/* Основний вміст (всередині сайту) */
+header, .intro, .features, footer {
+    position: relative;
+    z-index: 3; /* Вище ефектів */
+    text-align: center;
+}
+
+/* Стилізація заголовка сайту */
+header {
+    background: rgba(0, 0, 0, 0.6); /* Прозорий чорний фон */
+    padding: 20px 0;
+    border-bottom: 2px solid #ffcc00; /* Жовта лінія внизу */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 3em;
+    color: #ffcc00;
+    text-shadow: 0 0 10px #ffcc00; /* Світіння */
+}
+
+/* Анімація світіння для підзаголовків */
+h2, h3 {
+    animation: magicalGlow 3s infinite alternate;
+    color: #ffcc00;
+    text-shadow: 0 0 15px #ffcc00, 0 0 30px #ffcc00, 0 0 45px #ffcc00;
+    text-align: center;
+}
+
+/* Стилізація кнопки з магічним ефектом */
+button.magic-btn {
+    background: #ffcc00;
+    color: #0b0c1a;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 50px; /* Закруглені кути */
+    cursor: pointer;
+    box-shadow: 0 0 15px #ffcc00; /* Світіння */
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+/* Ефект при наведенні на кнопку */
+button.magic-btn:hover {
+    transform: scale(1.1); /* Збільшення */
+    box-shadow: 0 0 30px #ffcc00, 0 0 60px #ffcc00; /* Більше світіння */
+}
+
+/* Секція з описом фентезі-елементів */
+.features {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Окремий блок у features */
+.feature {
+    width: 30%;
+}
+
+/* Стиль заголовків елементів features */
+.features .feature h3 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #ffcc00;
+}
+
+/* Стиль опису всередині features */
+.features .feature p {
+    font-size: 1.2em;
+    color: #f0e6d2;
+}
+
+/* Маленькі іконки, якщо використовуються */
+.small-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* (Повторення стилю для body — можливо, зайве) */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
